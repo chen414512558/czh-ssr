@@ -12,8 +12,8 @@
     "build": "",
     "e2e": "NODE_ENV=development node nightwatch.runner.js",
     "service": "",
-    "gulp": "gulp",
-    "gulp:prod": "NODE_ENV=production gulp"
+    "gulp": "./node_modules/gulp/bin/gulp.js",
+    "gulp:prod": "NODE_ENV=production ./node_modules/gulp/bin/gulp.js"
   },
   "author": "",
   "license": "ISC",
