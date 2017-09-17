@@ -24,7 +24,7 @@ env:
   - secure: EXkOf1y1JReaXai6aZa5a+66lqybWlBv4cvyPVd49x9xQzayw8BZlxMEfxsnTi/IDC5tk1tgCuel+QGJfWDz54+BprqYmu88TScqYiu46opgJvGV+EyDDlc9CwC9Q+2madefJbF8EYVk1rTfABusCR/sFyRHr7TdK8XSO9nznxccohYUzrVmK1sL4OEdAyAfknv/dhVbHdbOHvc/XGzO2opDrSJsnev7z9VI28SiQx8b0EfWniSRTQ+a1Y+Ohs11lf+o/SrKNcln81q0fwZtDDEvpwqN9zAhef1y4AxbWaPbmo8pw/LpqusMMTmanjZ0mEEq9SvlnS6mh8NXbrQeNImtRQ5jy6VOAluhG0gKvmL4zxFCeYmpRt9K5SB+MF3xvEybgffGZI0aTA1BPuINm1lKTqFTwAl5BlQkn49mmsR2B/2TW7uCwiLX4H332MWGwRucUWsQeoN39qb/vr+wDgRBhZfGklvl4evoEzU9hzGqcHEKtBqkRTKuPUu0rkhfj9WgptObTFtyoUEX6Ghqsn1qcz+ouN/Klr+lKnAHIO9GKLvHISlWbxozOGFaRhlSd3vqgHlHeeOCy/xqW1SVLu+Wl94dFx85BBhtovBViu6oQ11IAjiIQYKDGSWmZMJ/Q1T/KORWW2pf6MRINV444SxPFr1ZOI25Re/2tizDgRo=
 before_install:
   - openssl aes-256-cbc -K $encrypted_a84317d8e6c8_key -iv $encrypted_a84317d8e6c8_iv
-  -in id_rsa.enc -out .travis/id_rsa -d
+  - in id_rsa.enc -out .travis/id_rsa -d
   - mv id_rsa ~/.ssh -f
   - chmod 600 ~/.ssh/id_rsa
   - eval $(ssh-agent)
