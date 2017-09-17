@@ -7,7 +7,7 @@
   "scripts": {
     "test": "npm run unit",
     "temptest": "npm run unit && npm run e2e && npm run servece",
-    "unit": "./node_modules/.bin/karma start",
+    "unit": "./node_modules/karma/bin/karma start",
     "start": "pm2 start app.js",
     "build": "",
     "e2e": "NODE_ENV=development node nightwatch.runner.js",
