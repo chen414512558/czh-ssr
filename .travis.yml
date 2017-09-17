@@ -5,16 +5,26 @@ cache:
   directories:
   - node_modules
 script:
-  - npm run gulp:prod
-  - npm test
+- npm run gulp:prod
+- npm test
 addons:
   ssh_known_hosts: 47.95.238.142
+ apt:
+   packages:
+   - sshpass
 after_success:
-  - scp -o stricthostkeychecking=no -r ./build ./reports root@47.95.238.142:~/mynode/czh-ssr/
-  - scp -o stricthostkeychecking=no ./package.json root@47.95.238.142:~/mynode/czh-ssr/
+- export SSHPASS=$DEPLOY_PASS
+# sshpass -p $PASSWORD
+- scp -o stricthostkeychecking=no -r ./build ./reports $USER@47.95.238.142:~/mynode/czh-ssr/
+#- scp -o stricthostkeychecking=no -r  $USER@47.95.238.142:~/mynode/czh-ssr/
+- scp -o stricthostkeychecking=no ./package.json $USER@47.95.238.142:~/mynode/czh-ssr/
+env:
+  global:
+  - secure: FO7TxfG1XzkzFJ8fAW8dEuNSjjmdmeNI6U0Jsf5XE1RDMJbKggOtKFIfwdLF/mZOrvKGJ/sUseScghs8VMVUhkiR+F+kfyvr8cYGjZW8d9i9f/DXuJOQz8lrg7aPTHa+3fXFp7Y//XYP84EkFGN2+OkquiSCt2h5bjjjW63o4gn+LBh6yNdC7ig/7BOpye0klPq6BqDqKPLeH/hOB9+t54ovIUOvMDS0AvvhNA/2FZW3LJJakM9PhElPvbQ2QYJI0PPstfZFO/Ef8Plrl8xv90voSmMDcMw2YcEwOlQqF2NYJJHitO1IiJi8vAiR9aGrcgZCTIMrpqNQZJ8ZG3/2289dTaiPHaiPA9yyULGYvZ0QJFwTurLYWOkbNA+AjZjk5UyybwgT3Cz6PF1fdzrE2Wk5rLwDDBh/I6yA0ApS5NXbwYyRlHtPbYZle/EVvTDfabvrQJYnqCXsMpxIIpRF+dbrUHPFmskk35APu93kK72euazlc3qF5xm9wuAHsQBprpWhWLOsiUWQ0tT0FKwmzIgmdnfmICgf1S6jfBpvNghcsK1+cF1dT7lDDKa4UNEMqGVdQqhkyNIj8JDJeJ/ytCA8kNJZUlEKQ7AeaTeQHpd4pVrA2LQ59cdDYxW75QV+fVsZ3RZc5vv+lM4t6WK4tkBOj1gwmKVut5k9AJAvnNA=
+  - secure: EXkOf1y1JReaXai6aZa5a+66lqybWlBv4cvyPVd49x9xQzayw8BZlxMEfxsnTi/IDC5tk1tgCuel+QGJfWDz54+BprqYmu88TScqYiu46opgJvGV+EyDDlc9CwC9Q+2madefJbF8EYVk1rTfABusCR/sFyRHr7TdK8XSO9nznxccohYUzrVmK1sL4OEdAyAfknv/dhVbHdbOHvc/XGzO2opDrSJsnev7z9VI28SiQx8b0EfWniSRTQ+a1Y+Ohs11lf+o/SrKNcln81q0fwZtDDEvpwqN9zAhef1y4AxbWaPbmo8pw/LpqusMMTmanjZ0mEEq9SvlnS6mh8NXbrQeNImtRQ5jy6VOAluhG0gKvmL4zxFCeYmpRt9K5SB+MF3xvEybgffGZI0aTA1BPuINm1lKTqFTwAl5BlQkn49mmsR2B/2TW7uCwiLX4H332MWGwRucUWsQeoN39qb/vr+wDgRBhZfGklvl4evoEzU9hzGqcHEKtBqkRTKuPUu0rkhfj9WgptObTFtyoUEX6Ghqsn1qcz+ouN/Klr+lKnAHIO9GKLvHISlWbxozOGFaRhlSd3vqgHlHeeOCy/xqW1SVLu+Wl94dFx85BBhtovBViu6oQ11IAjiIQYKDGSWmZMJ/Q1T/KORWW2pf6MRINV444SxPFr1ZOI25Re/2tizDgRo=
 before_install:
   - openssl aes-256-cbc -K $encrypted_a84317d8e6c8_key -iv $encrypted_a84317d8e6c8_iv
-  -in .travis/id_rsa.enc -out id_rsa -d
+  -in id_rsa.enc -out .travis/id_rsa -d
   - mv id_rsa ~/.ssh -f
   - chmod 600 ~/.ssh/id_rsa
   - eval $(ssh-agent)

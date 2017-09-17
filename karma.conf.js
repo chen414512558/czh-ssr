@@ -36,7 +36,7 @@ module.exports = function(config) {
         reporters: ['progress', 'coverage'],
         coverageReporter: {
             type: 'html',
-            dir: path.join(__dirname, './coverage/')
+            dir: path.join(__dirname, './reports/coverage/')
         },
 
         webpack: {
