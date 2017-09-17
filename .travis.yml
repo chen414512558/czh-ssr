@@ -14,7 +14,7 @@ after_success:
   - scp -o stricthostkeychecking=no ./package.json root@47.95.238.142:~/mynode/czh-ssr/
 before_install:
   - openssl aes-256-cbc -K $encrypted_a84317d8e6c8_key -iv $encrypted_a84317d8e6c8_iv
-  - in .travis/id_rsa.enc -out id_rsa -d
+  -in .travis/id_rsa.enc -out id_rsa -d
   - mv id_rsa ~/.ssh -f
   - chmod 600 ~/.ssh/id_rsa
   - eval $(ssh-agent)
