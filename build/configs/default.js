@@ -13,17 +13,32 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const config = {
     port: process.env.PORT || 3000,
     controllerConf: _path2.default.join(__dirname, '../controllers/'),
+    assetsConf: _path2.default.join(__dirname, '../assets'),
+    viewsConf: _path2.default.join(__dirname, '../views'),
     log: {
-        appenders: {
-            everything: { type: 'datefile',
-                filename: _path2.default.join(__dirname, '../logs/cheese.log'),
-                layout: { type: 'basic' },
-                pattern: '.yyyy-MM-dd',
-                alwaysIncludePattern: true }
-        },
-        categories: {
-            default: { appenders: ['everything'], level: 'info' }
-        }
+        appenders: [{
+            type: "console"
+        }, {
+            type: "clustered",
+            appenders: [{
+                type: "dateFile",
+                filename: "http.log",
+                pattern: "-yyyy-MM-dd",
+                category: "http"
+            }, {
+                type: "file",
+                filename: "app.log",
+                maxLogSize: 10485760,
+                numBackups: 5
+            }, {
+                type: "logLevelFilter",
+                level: "ERROR",
+                appender: {
+                    type: "file",
+                    filename: "errors.log"
+                }
+            }]
+        }]
     }
 };
 

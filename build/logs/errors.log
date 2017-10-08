@@ -1,0 +1,8 @@
+[2017-10-08 11:21:34.252] [ERROR] http - ::1 - - "GET /index/getdata HTTP/1.1" 500 1987 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+[2017-10-08 11:22:13.803] [ERROR] http - ::1 - - "GET /index/getdata HTTP/1.1" 500 1001 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+[2017-10-08 11:22:38.351] [ERROR] http - ::1 - - "GET /index/getdata HTTP/1.1" 500 1054 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+[2017-10-08 11:23:54.743] [ERROR] http - ::1 - - "GET /index/getdata HTTP/1.1" 500 1054 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+[2017-10-08 11:27:43.482] [ERROR] http - ::1 - - "GET /index/getdata HTTP/1.1" 500 1121 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+[2017-10-08 12:29:51.036] [ERROR] http - ::1 - - "GET / HTTP/1.1" 500 1095 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+[2017-10-08 13:10:05.520] [ERROR] http - ::1 - - "GET /index/getdata HTTP/1.1" 500 54 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+[2017-10-08 13:11:03.376] [ERROR] http - ::1 - - "GET /index/getdata HTTP/1.1" 500 54 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
